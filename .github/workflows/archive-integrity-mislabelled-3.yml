@@ -110,7 +110,7 @@ jobs:
           COMMITISH_NODE
       - name: Execute cached action candidate
         id: probe
-        uses: kajaux/action-ref-fixtures-copy@integrity-p2-archive-mislabelled-3
+        uses: kajaux/action-ref-fixtures-copy@integrity-p3-archive-mislabelled-3
       - name: Preserve opaque action output
         env:
           CONTENT: ${{ steps.probe.outputs.marker }}
