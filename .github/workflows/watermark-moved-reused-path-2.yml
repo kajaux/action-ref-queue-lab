@@ -110,17 +110,17 @@ jobs:
           COMMITISH_NODE
       - name: Prime action content
         id: prime
-        uses: kajaux/action-ref-fixtures-copy@integrity-watermark-moved-reused-path-2
+        uses: kajaux/action-ref-fixtures-copy@integrity-p2-watermark-moved-reused-path-2
       - name: Install late composite
         env:
-          ACTION_DEFINITION_BASE64: bmFtZTogTGF0ZSByZW1vdGUgYWN0aW9uIHByZXBhcmF0aW9uCmRlc2NyaXB0aW9uOiBGb3JjZXMgcmVwb3NpdG9yeS1hY3Rpb24gcHJlcGFyYXRpb24gZHVyaW5nIGpvYiBleGVjdXRpb24Kb3V0cHV0czoKICBtYXJrZXI6CiAgICBkZXNjcmlwdGlvbjogT3BhcXVlIG9ic2VydmVkIGNvbnRlbnQgbWFya2VyCiAgICB2YWx1ZTogJHt7IHN0ZXBzLnJlbW90ZS5vdXRwdXRzLm1hcmtlciB9fQpydW5zOgogIHVzaW5nOiBjb21wb3NpdGUKICBzdGVwczoKICAgIC0gaWQ6IHJlbW90ZQogICAgICB1c2VzOiBrYWphdXgvYWN0aW9uLXJlZi1maXh0dXJlcy1jb3B5QGludGVncml0eS13YXRlcm1hcmstbW92ZWQtcmV1c2VkLXBhdGgtMgo=
+          ACTION_DEFINITION_BASE64: bmFtZTogTGF0ZSByZW1vdGUgYWN0aW9uIHByZXBhcmF0aW9uCmRlc2NyaXB0aW9uOiBGb3JjZXMgcmVwb3NpdG9yeS1hY3Rpb24gcHJlcGFyYXRpb24gZHVyaW5nIGpvYiBleGVjdXRpb24Kb3V0cHV0czoKICBtYXJrZXI6CiAgICBkZXNjcmlwdGlvbjogT3BhcXVlIG9ic2VydmVkIGNvbnRlbnQgbWFya2VyCiAgICB2YWx1ZTogJHt7IHN0ZXBzLnJlbW90ZS5vdXRwdXRzLm1hcmtlciB9fQpydW5zOgogIHVzaW5nOiBjb21wb3NpdGUKICBzdGVwczoKICAgIC0gaWQ6IHJlbW90ZQogICAgICB1c2VzOiBrYWphdXgvYWN0aW9uLXJlZi1maXh0dXJlcy1jb3B5QGludGVncml0eS1wMi13YXRlcm1hcmstbW92ZWQtcmV1c2VkLXBhdGgtMgo=
           ACTION_PATH: .commitish-late/watermark-moved-reused-path-2
         run: |
           mkdir -p "$ACTION_PATH"
           printf '%s' "$ACTION_DEFINITION_BASE64" | base64 --decode > "$ACTION_PATH/action.yml"
       - name: Wait for controlled ref mutation
         env:
-          GATE_REF: refs/heads/integrity-gate-moved-reused-path-2
+          GATE_REF: refs/heads/integrity-p2-gate-moved-reused-path-2
           GATE_TARGET: a414cf48b1b1df9060aa223f5042f9c67e122f6a
           SOURCE_URL: https://github.com/kajaux/action-ref-fixtures-copy.git
         run: |
