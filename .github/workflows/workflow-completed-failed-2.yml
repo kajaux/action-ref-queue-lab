@@ -1,0 +1,20 @@
+name: workflow-completed-failed-2
+run-name: ${{ inputs.attempt }}
+on:
+  workflow_dispatch:
+    inputs:
+      attempt:
+        type: string
+        required: true
+      experiment:
+        type: string
+        required: true
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  probe:
+    uses: "kajaux/action-ref-fixtures-copy/.github/workflows/marker.yml@completed-workflow-failed-2"
+    with:
+      experiment: ${{ inputs.experiment }}
+      case_id: workflow-completed-failed-2

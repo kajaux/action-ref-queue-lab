@@ -1,0 +1,20 @@
+name: workflow-completed-fresh-1
+run-name: ${{ inputs.attempt }}
+on:
+  workflow_dispatch:
+    inputs:
+      attempt:
+        type: string
+        required: true
+      experiment:
+        type: string
+        required: true
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  probe:
+    uses: "kajaux/action-ref-fixtures-copy/.github/workflows/marker.yml@completed-workflow-fresh-1"
+    with:
+      experiment: ${{ inputs.experiment }}
+      case_id: workflow-completed-fresh-1
