@@ -1,0 +1,20 @@
+name: nested-both-fresh-2
+run-name: ${{ inputs.attempt }}
+on:
+  workflow_dispatch:
+    inputs:
+      attempt:
+        type: string
+        required: true
+      experiment:
+        type: string
+        required: true
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  probe:
+    uses: "kajaux/action-ref-fixtures-copy/.github/workflows/marker.yml@nested-workflow-both-fresh-2"
+    with:
+      experiment: ${{ inputs.experiment }}
+      case_id: nested-both-fresh-2
